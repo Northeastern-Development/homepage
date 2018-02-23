@@ -187,42 +187,42 @@ $('body').on("click",".slider_prev", function () {
 //-----------------------------------------------------
 	// FOR TESTING MOBILE RESPONSE SIZES
 //-----------------------------------------------------
-		//var ww = $(window).width();
-		//$("p.testp").text('Initial screen width is currently: ' + ww + 'px.');
+		var ww = $(window).width();
+		$("p.testp").text('Initial screen width is currently: ' + ww + 'px.');
 
 
 
 //-----------------------------------------------------
 	// WINDOW RESIZE FUNCTION
 //-----------------------------------------------------
-		// $(window).resize(function() {
-    //
-		// 	var ww = $(window).width();
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-		// 	$("p.testp").text('Initial screen width is currently: ' + ww + 'px.');
-		// 	if (ww <= 576){
-		// 		$("p.testp").text('Screen width is less than or equal to 576px. Width is currently: ' + ww + 'px.');
-		// 		}
-		// 	else if (ww <= 680){
-		// 		$("p.testp").text('Screen width is between 577px and 680px. Width is currently: ' + ww + 'px.');
-		// 		}
-		// 	else if (ww <= 1024){
-		// 		$("p.testp").text('Screen width is between 681px and 1024px. Width is currently: ' + ww + 'px.');
-		// 		}
-		// 	else if (ww <= 1500){
-		// 		$("p.testp").text('Screen width is between 1025px and 1499px. Width is currently: ' + ww + 'px.');
-		// 		}
-		// 	else {
-		// 		$("p.testp").text('Screen width is greater than 1500px. Width is currently: ' + ww + 'px.');
-		// 		}
-		// });
+		$(window).resize(function() {
+
+			var ww = $(window).width();
+
+
+
+
+
+
+
+
+			$("p.testp").text('Initial screen width is currently: ' + ww + 'px.');
+			if (ww <= 576){
+				$("p.testp").text('Screen width is less than or equal to 576px. Width is currently: ' + ww + 'px.');
+				}
+			else if (ww <= 680){
+				$("p.testp").text('Screen width is between 577px and 680px. Width is currently: ' + ww + 'px.');
+				}
+			else if (ww <= 1024){
+				$("p.testp").text('Screen width is between 681px and 1024px. Width is currently: ' + ww + 'px.');
+				}
+			else if (ww <= 1500){
+				$("p.testp").text('Screen width is between 1025px and 1499px. Width is currently: ' + ww + 'px.');
+				}
+			else {
+				$("p.testp").text('Screen width is greater than 1500px. Width is currently: ' + ww + 'px.');
+				}
+		});
 
 
 });
