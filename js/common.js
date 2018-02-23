@@ -32,12 +32,10 @@ if (wi >= 900){
         //console.log(delta);
         if (delta < 0){
           event.preventDefault();
-          //setTimeout(function(){ slidePanels('Left'); }, 500);
           slidePanels('Left');
           inMotion = true;
         }else if (delta > 0){
           event.preventDefault();
-          //etTimeout(function(){ slidePanels('Right'); }, 500);
           slidePanels('Right');
           inMotion = true;
         }
@@ -50,6 +48,7 @@ if (wi >= 900){
   function slidePanels(a){
     if (wi >= 900){
       mc.stop();
+
       $('main').css({'pointer-events':'none'});//disables hover of tiles until animation to the next screen stops
       if(a === 'Left' && currentPanel < panelCount -1){//this moves the panels to the right
         offset += windowWidth;
@@ -218,6 +217,8 @@ $('body').on("click",".slider_prev", function () {
 //-----------------------------------------------------
 		$(window).resize(function() {
 
+
+
 			var ww = $(window).width();
 
       if (ww >= 900){
@@ -228,7 +229,7 @@ $('body').on("click",".slider_prev", function () {
 
 
 
-
+      //onsole.log(windowWidth);
 
 			$("p.testp").text('Initial screen width is currently: ' + ww + 'px.');
 			if (ww <= 576){

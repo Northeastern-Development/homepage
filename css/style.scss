@@ -26,6 +26,8 @@ body{
 	}
 }
 
+
+
 header {
   background: black;
   height:100px;
@@ -120,6 +122,7 @@ main {
 			background-position: center center !important;
 			background-repeat: no-repeat !important;
 			background-size: cover !important;
+			//-webkit-user-drag: none;
 			&.nu__block-rotator{
 				& > a {
 					opacity:1;
@@ -696,14 +699,7 @@ main {
 							background:transparent ;
 						}
 						& > h2 {
-							text-shadow:2px 2px 6px rgba(0, 0, 0, 0.7);
-							max-width:90%;
-							padding-bottom: .25em;
-							position: absolute;
-							bottom: 0;
-							left: 5%;
-							z-index:100;
-							transform: translateX(-5%) translateY(0);
+
 						}
 					}
 					& > .slider_next,  & > .slider_prev{
@@ -860,7 +856,128 @@ main {
 
 }
 
+@media screen and (max-width: 800px) {
+// revealing the panel content and background cololor
 
+
+
+#next, #prev {
+
+}
+	main {
+
+
+		&  section {
+
+			& > article {
+
+				&.nu__block-rotator{
+					& > a {
+
+						&:hover {
+
+						}
+						& > h2 {
+
+						}
+					}
+					& > .slider_next,  & > .slider_prev{
+
+
+					}
+
+					& > .nu__rotator-logo {
+
+					}
+				}
+				& > a {
+					opacity:1;
+					background: rgba(0,0,0,0.7);
+		      & > div{
+
+		        &:after {
+
+		        }
+		        &:hover {
+		          &:after {
+
+		          }
+		        }
+		      }
+		      & > h2 {
+
+		      }
+					& > p {
+						font-size:1.2rem;
+						bottom:18vw;
+					}
+		    }
+			}
+		}
+
+
+		&  section.panel-1{
+	    & > article {
+
+	      &:nth-child(1){
+
+	      }
+	      &:nth-child(2){
+
+	      }
+				&:nth-child(3){
+
+	      }
+				&:nth-child(4){
+
+	      }
+				&:nth-child(5){
+
+	      }
+	    }
+
+	  }
+		& > section.panel-2{
+	    & > article {
+
+	      &:nth-child(1){
+
+	      }
+	      &:nth-child(2){
+
+	      }
+				&:nth-child(3){
+
+	      }
+				&:nth-child(4){
+
+	      }
+	    }
+	  }
+
+		& > section.panel-3{
+			& > article {
+
+
+				&:nth-child(1){
+
+				}
+				&:nth-child(2){
+
+				}
+				&:nth-child(3){
+
+				}
+				&:nth-child(4){
+
+				}
+			}
+		}
+
+	}
+
+
+}
 
 
 @media screen and (max-width: 700px) {
@@ -982,6 +1099,124 @@ main {
 		}
 
 	}
+
+
+}
+
+@media screen and (max-width: 600px) {
+
+	main {
+
+
+		&  section {
+
+			& > article {
+
+				&.nu__block-rotator{
+					& > a {
+
+						&:hover {
+
+						}
+						& > h2 {
+
+						}
+					}
+					& > .slider_next,  & > .slider_prev{
+
+
+					}
+
+					& > .nu__rotator-logo {
+
+					}
+				}
+				& > a {
+					opacity:1;
+					background: rgba(0,0,0,0.7);
+					& > div{
+
+						&:after {
+
+						}
+						&:hover {
+							&:after {
+
+							}
+						}
+					}
+					& > h2 {
+
+					}
+					& > p {
+						font-size:1.2rem;
+						bottom:40vw;
+					}
+				}
+			}
+		}
+
+
+		&  section.panel-1{
+			& > article {
+
+				&:nth-child(1){
+
+				}
+				&:nth-child(2){
+
+				}
+				&:nth-child(3){
+
+				}
+				&:nth-child(4){
+
+				}
+				&:nth-child(5){
+
+				}
+			}
+
+		}
+		& > section.panel-2{
+			& > article {
+
+				&:nth-child(1){
+
+				}
+				&:nth-child(2){
+
+				}
+				&:nth-child(3){
+
+				}
+				&:nth-child(4){
+
+				}
+			}
+		}
+
+		& > section.panel-3{
+			& > article {
+
+
+				&:nth-child(1){
+
+				}
+				&:nth-child(2){
+
+				}
+				&:nth-child(3){
+
+				}
+				&:nth-child(4){
+
+				}
+			}
+		}
+
+	}
+
 
 
 }
