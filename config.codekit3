@@ -109,17 +109,6 @@
 		"opt": 0,
 		"q": 100
 		},
-	"\/images\/l-arrow.png": {
-		"ft": 32768,
-		"iS": 2235,
-		"oA": 0,
-		"oAP": "\/images\/l-arrow.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
 	"\/images\/leadership.jpg": {
 		"ft": 16384,
 		"iS": 139752,
@@ -150,17 +139,6 @@
 		"opt": 0,
 		"q": 100
 		},
-	"\/images\/r-arrow.png": {
-		"ft": 32768,
-		"iS": 2227,
-		"oA": 0,
-		"oAP": "\/images\/r-arrow.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
 	"\/images\/research.jpg": {
 		"ft": 16384,
 		"iS": 41872,
@@ -169,28 +147,6 @@
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
-		"q": 100
-		},
-	"\/images\/rotator-next.png": {
-		"ft": 32768,
-		"iS": 2851,
-		"oA": 0,
-		"oAP": "\/images\/rotator-next.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/images\/rotator-prev.png": {
-		"ft": 32768,
-		"iS": 2888,
-		"oA": 0,
-		"oAP": "\/images\/rotator-prev.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
 		"q": 100
 		},
 	"\/images\/strengthen_inno.jpg": {
