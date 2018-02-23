@@ -43,11 +43,33 @@ footer {
 }
 
 #prev, #next {
-    position: fixed;
-    top: 50%;
-    margin-top: -24px;
-    z-index: 9999;
-    cursor:pointer;
+		cursor:pointer;
+		position: absolute;
+		top: 50%;
+		width: 3%;
+		padding-bottom: 3%;
+		border-radius: 50%;
+		background:rgba(255, 255, 255, .6);
+		transform: translateY(-50%);
+		z-index:500;
+		& > svg {
+			position: absolute;
+			left: 20%;
+			top: 20%;
+			width: 60%;
+			height: 60%;
+			& > .arrow {
+				fill: rgba(255, 255, 255, 1.0);
+			}
+		}
+		&:hover {
+			background:black;
+			& > svg {
+				& > .arrow {
+					fill: white;
+				}
+			}
+		}
 
 }
 
@@ -108,29 +130,45 @@ main {
 						padding-bottom: .25em;
 						position: absolute;
 						bottom: 0;
-						left: 5%;
+						left: 6%;
 						z-index:100;
-						transform: translateX(-5%) translateY(0);
+						transform: translateX(-6%) translateY(0);
 					}
 				}
 				& > .slider_next, & > .slider_prev {
-					width:1.8vw;
-					height:1.8vw;
-					position:absolute;
-					top:70%;
+					position: absolute;
+				  top: 80%;
+				  width: 4%;
+				  padding-bottom: 4%;
+				  border-radius: 50%;
+				  background: white;
+				  transform: translateY(-80%);
 					z-index:100;
 					cursor:pointer;
 					display:none;
+					& > svg {
+						position: absolute;
+  					left: 20%;
+  					top: 20%;
+  					width: 60%;
+  					height: 60%;
+						& > .arrow {
+							fill: #333;
+						}
+					}
+					&:hover {
+						background:black;
+						& > svg {
+							& > .arrow {
+								fill: white;
+							}
+						}
+					}
 				}
 				& > .slider_next {
-					//background: url("../images/rotator-next.png");
-					background:red;
-					left:10%;
-					//transform: translateX(-10%) translateY(70%);
+					left:11%;
 				}
 				& > .slider_prev {
-					background:green;
-					//ackground: url("../images/rotator-prev.png");
 					left:5%;
 				}
 				& > .nu__rotator-logo {
@@ -609,7 +647,7 @@ main {
 		section {
 			& > article.nu__block-rotator {
 				& > .slider_prev, & > .slider_next {
-					top:65%;
+					//top:65%;
 				}
 			}
 		}
@@ -663,9 +701,9 @@ main {
 						}
 					}
 					& > .slider_next,  & > .slider_prev{
-						top:73%;
-						width:30px;
-						height:30px;
+						//top:73%;
+						//width:30px;
+						//height:30px;
 
 					}
 
@@ -843,9 +881,9 @@ main {
 						}
 					}
 					& > .slider_next,  & > .slider_prev{
-						top:68%;
-						width:30px;
-						height:30px;
+						//top:68%;
+						//width:30px;
+						//height:30px;
 					}
 					& > .slider_next {
 						left:15%;

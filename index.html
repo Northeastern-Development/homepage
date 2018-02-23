@@ -14,8 +14,16 @@
 
   <header>Header</header>
 
-  <div id="prev"><img src="images/l-arrow.png"></div>
-  <div id="next"><img src="images/r-arrow.png"></div>
+  <div id="prev">
+    <svg viewbox="0 0 100 100">
+      <path class="arrow" d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z" transform=" translate(15,0)">
+   </svg>
+  </div>
+  <div id="next">
+    <svg viewbox="0 0 100 100">
+      <path class="arrow" d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z "transform="translate(85,100) rotate(180) ">
+    </svg>
+  </div>
 
   <main class="nu__home-panels" id="nu__panels">
 
@@ -42,11 +50,19 @@
       </article>
 
       <article class="nu__block-rotator">
-        <a href="javascript:void(0)" style="background-image: url('images/image-1.jpg');">
+        <a href="#" style="background-image: url('images/image-1.jpg');">
           <h2>Caption 1</h2>
         </a>
-        <div class="slider_prev" title="Click here to view the previous slide"> < </div>
-        <div class="slider_next" title="Click here to view the next slide"> > </div>
+        <div class="slider_prev" title="Click here to view the previous slide">
+           <svg viewbox="0 0 100 100">
+             <path class="arrow" d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z" transform=" translate(15,0)">
+          </svg>
+        </div>
+        <div class="slider_next" title="Click here to view the next slide">
+          <svg viewbox="0 0 100 100">
+            <path class="arrow" d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z "transform="translate(85,100) rotate(180) ">
+          </svg>
+         </div>
         <div class="nu__rotator-logo"></div>
       </article>
 
