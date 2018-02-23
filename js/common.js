@@ -13,9 +13,13 @@ $(document).ready(function(){
 
 
 $('body').addClass('nu-js');//adds js class to body if js is enabled
-$('#next').fadeIn(200);//fades in the next panel button if js is enabled
 
 
+if (wi >= 900){
+  $('#next').fadeIn(200);//fades in the next panel button if js is enabled
+}else {
+  $('#next').fadeOut(200);//fades in the next panel button if js is enabled
+}
 //-----------------------------------------------------
   // Sliding Panel scroll, swipe, keydown, and click.
 //-----------------------------------------------------
@@ -216,7 +220,11 @@ $('body').on("click",".slider_prev", function () {
 
 			var ww = $(window).width();
 
-
+      if (ww >= 900){
+        $('#next').fadeIn(200);//fades in the next panel button if js is enabled
+      }else {
+        $('#next').fadeOut(200);
+      }
 
 
 

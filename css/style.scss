@@ -134,20 +134,20 @@ main {
 						max-width:90%;
 						padding-bottom: .25em;
 						position: absolute;
-						bottom: 5%;
+						bottom: 20px;
 						left: 6%;
 						z-index:100;
-						transform: translateX(-6%) translateY(-5%);
+						transform: translateX(-6%) translateY(-20px);
 					}
 				}
 				& > .slider_next, & > .slider_prev {
 					position: absolute;
-				  bottom: 18%;
+				  bottom: 40px;
 				  width: 4%;
 				  padding-bottom: 4%;
 				  border-radius: 50%;
 				  background: white;
-				  transform: translateY(-18%);
+				  transform: translateY(-40px);
 					z-index:100;
 					cursor:pointer;
 					display:none;
@@ -220,10 +220,10 @@ main {
 				position:relative;
 				padding-bottom: .25em;
 				position: absolute;
-				bottom: 5%;
+				bottom: 20px;
 				left: 50%;
 				z-index:100;
-				transform: translateX(-50%) translateY(-5%);
+				transform: translateX(-50%) translateY(-20px);
 				white-space: nowrap;
 				&:after {
 					position: absolute;
