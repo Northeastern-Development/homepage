@@ -12,7 +12,8 @@ $(document).ready(function(){
     var mc = new Hammer(myPanels);
 
 
-$('body').addClass('nu-js');
+$('body').addClass('nu-js');//adds js class to body if js is enabled
+$('#next').fadeIn(200);//fades in the next panel button if js is enabled
 
 
 //-----------------------------------------------------
@@ -137,7 +138,7 @@ var captions = ["caption 1", "caption 2", "caption 3", "caption 4"]
 var n = images.length - 1;
 // Next / Prev arrow click
 
-$('.slider_next, .slider_prev').fadeIn(200);
+$('.slider_next, .slider_prev').fadeIn(200);//if js is enabled then the rotator arrows will load
 
 $('body').on("click",".slider_next", function () {
 
