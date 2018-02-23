@@ -12,7 +12,13 @@ $(document).ready(function(){
     var mc = new Hammer(myPanels);
 
 
-if (wi >= 1200){
+$('body').addClass('nu-js');
+
+//-----------------------------------------------------
+  // Sliding Panel scroll, swipe, keydown, and click.
+//-----------------------------------------------------
+
+
 
     $("body").mousewheel(function(event, delta){
 
@@ -36,34 +42,36 @@ if (wi >= 1200){
 
   // this is the brain for all that is happening
   function slidePanels(a){
-    mc.stop();
-    if(a === 'Left' && currentPanel < panelCount -1){//this moves the panels to the right
-      offset += windowWidth;
-      currentPanel++;
-      if(currentPanel == panelCount -1){
-        $("#next").css({'display':'none'});
-      }else {
-        $("#next").css({'display':'block'});
-        $("#prev").css({'display':'block'});
+    if (wi >= 900){
+      mc.stop();
+      if(a === 'Left' && currentPanel < panelCount -1){//this moves the panels to the right
+        offset += windowWidth;
+        currentPanel++;
+        if(currentPanel == panelCount -1){
+          $("#next").css({'display':'none'});
+        }else {
+          $("#next").css({'display':'block'});
+          $("#prev").css({'display':'block'});
+        }
+        $('.nu__home-panels').animate({"margin-left":  offset }, aspeeds, function() {
+          inMotion = false;
+        });
+      }else if (a === 'Right' && currentPanel > 0){//this moves the panels to the left
+        //console.log('bck');
+        offset -= windowWidth
+        currentPanel--;
+        if(currentPanel == panelCount -1){
+          $("#next").css({'display':'block'});
+        }else if(currentPanel == 0) {
+          $("#prev").css({'display':'none'});
+          $("#next").css({'display':'block'});
+        }else {
+          $("#next").css({'display':'block'});
+        }
+        $('.nu__home-panels').animate({"margin-left":  offset }, aspeeds, function() {
+          inMotion = false;
+        });
       }
-      $('.nu__home-panels').animate({"margin-left":  offset }, aspeeds, function() {
-        inMotion = false;
-      });
-    }else if (a === 'Right' && currentPanel > 0){//this moves the panels to the left
-      //console.log('bck');
-      offset -= windowWidth
-      currentPanel--;
-      if(currentPanel == panelCount -1){
-        $("#next").css({'display':'block'});
-      }else if(currentPanel == 0) {
-        $("#prev").css({'display':'none'});
-        $("#next").css({'display':'block'});
-      }else {
-        $("#next").css({'display':'block'});
-      }
-      $('.nu__home-panels').animate({"margin-left":  offset }, aspeeds, function() {
-        inMotion = false;
-      });
     }
   }
 
@@ -99,16 +107,7 @@ if (wi >= 1200){
   });
 
 
-
-
-  //var myPanels = document.getElementById('nu__panels');
-
-  // create a simple instance
-  // by default, it only adds horizontal recognizers
-  //var mc = new Hammer(myPanels);
-
-
-  // listen to events...
+  // hammer js swipe left and right.
   mc.on("panleft", function(ev) {
     //inMotion = true;
     slidePanels('Left');
@@ -119,9 +118,7 @@ if (wi >= 1200){
     slidePanels('Right');
   });
 
-}else {
 
-}
 
 
 
@@ -136,7 +133,7 @@ var captions = ["caption 1", "caption 2", "caption 3", "caption 4"]
 var n = images.length - 1;
 // Next / Prev arrow click
 
-
+$('.slider_next, .slider_prev').fadeIn(200);
 
 $('body').on("click",".slider_next", function () {
 
@@ -184,6 +181,21 @@ $('body').on("click",".slider_prev", function () {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //-----------------------------------------------------
 	// FOR TESTING MOBILE RESPONSE SIZES
 //-----------------------------------------------------
@@ -198,7 +210,6 @@ $('body').on("click",".slider_prev", function () {
 		$(window).resize(function() {
 
 			var ww = $(window).width();
-
 
 
 
