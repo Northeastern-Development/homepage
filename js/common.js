@@ -14,6 +14,7 @@ $(document).ready(function(){
 
 $('body').addClass('nu-js');
 
+
 //-----------------------------------------------------
   // Sliding Panel scroll, swipe, keydown, and click.
 //-----------------------------------------------------
@@ -44,6 +45,7 @@ $('body').addClass('nu-js');
   function slidePanels(a){
     if (wi >= 900){
       mc.stop();
+      $('main').css({'pointer-events':'none'});//disables hover of tiles until animation to the next screen stops
       if(a === 'Left' && currentPanel < panelCount -1){//this moves the panels to the right
         offset += windowWidth;
         currentPanel++;
@@ -55,6 +57,7 @@ $('body').addClass('nu-js');
         }
         $('.nu__home-panels').animate({"margin-left":  offset }, aspeeds, function() {
           inMotion = false;
+          $('main').css({'pointer-events':'auto'});//enables hover of tiles until animation to the next screen stops
         });
       }else if (a === 'Right' && currentPanel > 0){//this moves the panels to the left
         //console.log('bck');
@@ -70,6 +73,7 @@ $('body').addClass('nu-js');
         }
         $('.nu__home-panels').animate({"margin-left":  offset }, aspeeds, function() {
           inMotion = false;
+          $('main').css({'pointer-events':'auto'});//enables hover of tiles until animation to the next screen stops
         });
       }
     }
