@@ -7,7 +7,7 @@ $(document).ready(function(){
     var aspeeds = 1500;
     var wi = $(window).width();
     var myPanels = document.getElementById('nu__panels');
-//
+    var sizeBreak = 900;//This determines if we are scrolling horizontally or vertically.  
     // by default, it only adds horizontal recognizers
     var mc = new Hammer(myPanels);
 
@@ -15,7 +15,7 @@ $(document).ready(function(){
 $('body').addClass('nu-js');//adds js class to body if js is enabled
 
 
-if (wi >= 900){
+if (wi >= sizeBreak){
   $('#next').fadeIn(200);//fades in the next panel button if js is enabled
 }else {
   $('#next').fadeOut(200);//fades in the next panel button if js is enabled
@@ -26,7 +26,7 @@ if (wi >= 900){
 
   // this is the brain for all that is happening
   function slidePanels(a){
-    if (wi >= 900){
+    if (wi >= sizeBreak){
       mc.stop();
       $('main').css({'pointer-events':'none'});//disables hover of tiles until animation to the next screen stops
       if(a === 'Left' && currentPanel < panelCount -1){//this moves the panels to the right
@@ -64,7 +64,7 @@ if (wi >= 900){
   $("body").mousewheel(function(event, delta){
   //$('body').bind('mousewheel', function(event, delta) {
 
-    if (wi >= 900  && !inMotion){
+    if (wi >= sizeBreak  && !inMotion){
       if (delta < 0){
         event.preventDefault();
         slidePanels('Left');
@@ -82,7 +82,7 @@ if (wi >= 900){
 
   // Next / Prev arrow click functions
   $('body').on("click","#next", function (e) {
-    //if (wi >= 900  && !inMotion){
+    //if (wi >= sizeBreak  && !inMotion){
       inMotion = true;
       slidePanels('Left');
     //}
@@ -90,7 +90,7 @@ if (wi >= 900){
   });
 
   $('body').on("click","#prev", function (e) {
-    //if (wi >= 900  && !inMotion){
+    //if (wi >= sizeBreak  && !inMotion){
       inMotion = true;
       slidePanels('Right');
     //}
@@ -98,7 +98,7 @@ if (wi >= 900){
 
   // arrow keys
   $(document).keydown(function(e){
-    if (wi >= 900  && !inMotion){
+    if (wi >= sizeBreak  && !inMotion){
       switch (e.which){
       case 37:    //left arrow key
         slidePanels('Right');
@@ -221,7 +221,7 @@ $('body').on("click",".slider_prev", function () {
 
 			var ww = $(window).width();
 
-      if (ww >= 900){
+      if (ww >= sizeBreak){
         inMotion = false;
         offset = 0;
         currentPanel = 0;
