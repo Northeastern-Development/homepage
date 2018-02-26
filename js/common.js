@@ -3,7 +3,7 @@ $(document).ready(function(){
     var windowWidth = $(window).width() * -1;
     var offset = 0;
     var currentPanel = 0;
-    var panelCount = 3;
+    var panelCount = 3;//# of panels sections within #nu__panels on desktop
     var aspeeds = 1500;
     var wi = $(window).width();
     var myPanels = document.getElementById('nu__panels');
@@ -24,31 +24,10 @@ if (wi >= 900){
   // Sliding Panel scroll, swipe, keydown, and click.
 //-----------------------------------------------------
 
-
-
-    $("body").mousewheel(function(event, delta){
-
-      if (!inMotion){
-        //console.log(delta);
-        if (delta < 0){
-          event.preventDefault();
-          slidePanels('Left');
-          inMotion = true;
-        }else if (delta > 0){
-          event.preventDefault();
-          slidePanels('Right');
-          inMotion = true;
-        }
-      }
-
-   });
-
-
   // this is the brain for all that is happening
   function slidePanels(a){
     if (wi >= 900){
       mc.stop();
-
       $('main').css({'pointer-events':'none'});//disables hover of tiles until animation to the next screen stops
       if(a === 'Left' && currentPanel < panelCount -1){//this moves the panels to the right
         offset += windowWidth;
@@ -64,7 +43,6 @@ if (wi >= 900){
           $('main').css({'pointer-events':'auto'});//enables hover of tiles until animation to the next screen stops
         });
       }else if (a === 'Right' && currentPanel > 0){//this moves the panels to the left
-        //console.log('bck');
         offset -= windowWidth
         currentPanel--;
         if(currentPanel == panelCount -1){
@@ -83,21 +61,44 @@ if (wi >= 900){
     }
   }
 
+  $("body").mousewheel(function(event, delta){
+  //$('body').bind('mousewheel', function(event, delta) {
+
+    if (wi >= 900  && !inMotion){
+      if (delta < 0){
+        event.preventDefault();
+        slidePanels('Left');
+        inMotion = true;
+      }else if (delta > 0 && currentPanel != 0){
+        event.preventDefault();
+        slidePanels('Right');
+        inMotion = true;
+      }
+    }
+    //console.log(delta);
+ });
+
+
 
   // Next / Prev arrow click functions
   $('body').on("click","#next", function (e) {
-    inMotion = true;
-    slidePanels('Left');
-    //console.log('dasf');
+    //if (wi >= 900  && !inMotion){
+      inMotion = true;
+      slidePanels('Left');
+    //}
+    //console.log(inMotion);
   });
 
   $('body').on("click","#prev", function (e) {
-    inMotion = true;
-    slidePanels('Right');
+    //if (wi >= 900  && !inMotion){
+      inMotion = true;
+      slidePanels('Right');
+    //}
   });
 
   // arrow keys
   $(document).keydown(function(e){
+    if (wi >= 900  && !inMotion){
       switch (e.which){
       case 37:    //left arrow key
         slidePanels('Right');
@@ -112,6 +113,7 @@ if (wi >= 900){
           slidePanels('Left');
           break;
       }
+    }
   });
 
 
@@ -208,7 +210,7 @@ $('body').on("click",".slider_prev", function () {
 	// FOR TESTING MOBILE RESPONSE SIZES
 //-----------------------------------------------------
 		var ww = $(window).width();
-		$("p.testp").text('Initial screen width is currently: ' + ww + 'px.');
+		//$("p.testp").text('Initial screen width is currently: ' + ww + 'px.');
 
 
 
@@ -217,37 +219,42 @@ $('body').on("click",".slider_prev", function () {
 //-----------------------------------------------------
 		$(window).resize(function() {
 
-
-
 			var ww = $(window).width();
 
       if (ww >= 900){
+        inMotion = false;
+        offset = 0;
+        currentPanel = 0;
+        panelCount = 3;
+        aspeeds = 1500;
+        windowWidth = $(window).width() * -1;
         $('#next').fadeIn(200);//fades in the next panel button if js is enabled
       }else {
-        $('#next').fadeOut(200);
+        inMotion = true;
+        $('#next, #prev').fadeOut(200);
+        $('#nu__panels').css({'margin-left':'0'});
       }
-
 
 
       //onsole.log(windowWidth);
 
-			$("p.testp").text('Initial screen width is currently: ' + ww + 'px.');
-			if (ww <= 576){
-				$("p.testp").text('Screen width is less than or equal to 576px. Width is currently: ' + ww + 'px.');
-				}
-			else if (ww <= 680){
-				$("p.testp").text('Screen width is between 577px and 680px. Width is currently: ' + ww + 'px.');
-				}
-			else if (ww <= 1024){
-				$("p.testp").text('Screen width is between 681px and 1024px. Width is currently: ' + ww + 'px.');
-				}
-			else if (ww <= 1500){
-				$("p.testp").text('Screen width is between 1025px and 1499px. Width is currently: ' + ww + 'px.');
-				}
-			else {
-				$("p.testp").text('Screen width is greater than 1500px. Width is currently: ' + ww + 'px.');
-				}
-		});
+		// 	$("p.testp").text('Initial screen width is currently: ' + ww + 'px.');
+		// 	if (ww <= 576){
+		// 		$("p.testp").text('Screen width is less than or equal to 576px. Width is currently: ' + ww + 'px.');
+		// 		}
+		// 	else if (ww <= 680){
+		// 		$("p.testp").text('Screen width is between 577px and 680px. Width is currently: ' + ww + 'px.');
+		// 		}
+		// 	else if (ww <= 1024){
+		// 		$("p.testp").text('Screen width is between 681px and 1024px. Width is currently: ' + ww + 'px.');
+		// 		}
+		// 	else if (ww <= 1500){
+		// 		$("p.testp").text('Screen width is between 1025px and 1499px. Width is currently: ' + ww + 'px.');
+		// 		}
+		// 	else {
+		// 		$("p.testp").text('Screen width is greater than 1500px. Width is currently: ' + ww + 'px.');
+		// 		}
+	});
 
 
 });
