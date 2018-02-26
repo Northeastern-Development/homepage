@@ -7,7 +7,7 @@ $(document).ready(function(){
     var aspeeds = 1500;
     var wi = $(window).width();
     var myPanels = document.getElementById('nu__panels');
-    // create a simple instance
+//
     // by default, it only adds horizontal recognizers
     var mc = new Hammer(myPanels);
 
