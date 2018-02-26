@@ -5,17 +5,17 @@ $(document).ready(function(){
     var currentPanel = 0;
     var panelCount = 3;//# of panels sections within #nu__panels on desktop
     var aspeeds = 1500;
-    var wi = $(window).width();
-    var myPanels = document.getElementById('nu__panels');
-    var sizeBreak = 900;//This determines if we are scrolling horizontally or vertically.  
+    var ww = $(window).width();
+    var sizeBreak = 900;//This determines if we are scrolling horizontally or vertically.
     // by default, it only adds horizontal recognizers
+    var myPanels = document.getElementById('nu__panels');
     var mc = new Hammer(myPanels);
 
 
 $('body').addClass('nu-js');//adds js class to body if js is enabled
 
 
-if (wi >= sizeBreak){
+if (ww >= sizeBreak){
   $('#next').fadeIn(200);//fades in the next panel button if js is enabled
 }else {
   $('#next').fadeOut(200);//fades in the next panel button if js is enabled
@@ -26,7 +26,7 @@ if (wi >= sizeBreak){
 
   // this is the brain for all that is happening
   function slidePanels(a){
-    if (wi >= sizeBreak){
+    if (ww >= sizeBreak){
       mc.stop();
       $('main').css({'pointer-events':'none'});//disables hover of tiles until animation to the next screen stops
       if(a === 'Left' && currentPanel < panelCount -1){//this moves the panels to the right
@@ -64,7 +64,7 @@ if (wi >= sizeBreak){
   $("body").mousewheel(function(event, delta){
   //$('body').bind('mousewheel', function(event, delta) {
 
-    if (wi >= sizeBreak  && !inMotion){
+    if (ww >= sizeBreak  && !inMotion){
       if (delta < 0){
         event.preventDefault();
         slidePanels('Left');
@@ -81,7 +81,7 @@ if (wi >= sizeBreak){
 
 
   // Next / Prev arrow click functions
-  $('body').on("click","#next", function (e) {
+  $('body').on("click",".js-panel-next", function (e) {
     //if (wi >= sizeBreak  && !inMotion){
       inMotion = true;
       slidePanels('Left');
@@ -89,7 +89,7 @@ if (wi >= sizeBreak){
     //console.log(inMotion);
   });
 
-  $('body').on("click","#prev", function (e) {
+  $('body').on("click",".js-panel-prev", function (e) {
     //if (wi >= sizeBreak  && !inMotion){
       inMotion = true;
       slidePanels('Right');
@@ -98,7 +98,7 @@ if (wi >= sizeBreak){
 
   // arrow keys
   $(document).keydown(function(e){
-    if (wi >= sizeBreak  && !inMotion){
+    if (ww >= sizeBreak  && !inMotion){
       switch (e.which){
       case 37:    //left arrow key
         slidePanels('Right');
@@ -231,7 +231,7 @@ $('body').on("click",".slider_prev", function () {
         $('#next').fadeIn(200);//fades in the next panel button if js is enabled
       }else {
         inMotion = true;
-        $('#next, #prev').fadeOut(200);
+        $('.nu__panel-nav').css({'display':'none'});
         $('#nu__panels').css({'margin-left':'0'});
       }
 
