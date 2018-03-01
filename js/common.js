@@ -65,7 +65,7 @@ if (ww >= sizeBreak){
   //$('body').bind('mousewheel', function(event, delta) {
 
     if (ww >= sizeBreak  && !inMotion){
-      if (delta < 0){
+      if (delta < 0 && currentPanel != 2){
         event.preventDefault();
         slidePanels('Left');
         inMotion = true;
@@ -213,13 +213,14 @@ $('body').on("click",".slider_prev", function () {
 		//$("p.testp").text('Initial screen width is currently: ' + ww + 'px.');
 
 
-
 //-----------------------------------------------------
 	// WINDOW RESIZE FUNCTION
 //-----------------------------------------------------
 		$(window).resize(function() {
 
 			var ww = $(window).width();
+
+
 
       if (ww >= sizeBreak){
         inMotion = false;
